@@ -1,4 +1,4 @@
-# VLR_Project_Stable_Diffusion
+# VLR Project-Stable Diffusion: Fashion Is All You Need
 This project is aims towards Generating Pose Aware Photo-Realistic Clothes For A Target Image, using an input image of the cloth texture, and a text prompt.
 
 # Abstract:
@@ -26,7 +26,8 @@ The fashion industry stands to benefit greatly from the use of AI-generated fash
 cv2 ,matplotlib, numpy , os, sys , subprocess
 
 
-# Step0: Make sure image is 512x512 resoltuion and in .jpg format
+# Step0: Image Pre-preprocessing 
+Make sure image is 512x512 resolution and in .jpg format
 
 # Step1: Cloth Segmentation:
 Path: Code/cloth-segmentation
@@ -41,11 +42,11 @@ Path: Code/cloth-segmentation
 Path: Code/mask-augmentation.py
 1) Add input images folders path
 2) Add segmentation Mask path
-3) Run `python mask_augmentation.py` and results would be saved in 'results' folder
+3) Run `python mask_augmentation.py` and results would be saved in `results` folder
 
 # Step3 : Run Stable Diffusion 2.1
 Path: Code/Stable-Diffusion-Custom/utils/pipeline.py
-1) check for the 'image_path_dir' and 'mask_path' inside 'Inpaint' function
+1) check for the `image_path_dir` and 'mask_path' inside `Inpaint` function
 2) initialise the right stable diffusion model - (`mad3310/stable-diffusion-fashion-v1-1,stabilityai/stable-diffusion-2-1,CompVis/stable-diffusion-v1-4,CompVis/stable-diffusion-v1-4`) are a few viable options and pretrained models
 3) Results will be saved in `Code/diffusion_results` folder
 
