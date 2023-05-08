@@ -25,6 +25,7 @@ The fashion industry stands to benefit greatly from the use of AI-generated fash
 # Libraries Needed:
 cv2 ,matplotlib, numpy , os 
 
+
 # Step0: Make sure image is 512x512 resoltuion and in .jpg format
 
 # Step1: Cloth Segmentation:
@@ -43,10 +44,72 @@ Path: Code/mask-augmentation.py
 3) Run `python mask_augmentation.py` and results would be saved in 'results' folder
 
 # Step3 : Run Stable Diffusion 2.1
-Path: Code/Stable-Diffusion-Playground/utils/pipeline.py
+Path: Code/Stable-Diffusion-Custom/utils/pipeline.py
 1) check for the 'image_path_dir' and 'mask_path' inside 'Inpaint' function
 2) initialise the right stable diffusion model - (`mad3310/stable-diffusion-fashion-v1-1,stabilityai/stable-diffusion-2-1,CompVis/stable-diffusion-v1-4,CompVis/stable-diffusion-v1-4`) are a few viable options and pretrained models
 3) Results will be saved in `Code/diffusion_results` folder
 
 # Step4: Run PIDM on results of Stable Diffusion
-Path: Code/PIDM 
+Path: Code/PIDM
+
+## Conda Installation
+
+``` bash
+# 1. Create a conda virtual environment.
+conda create -n PIDM python=3.6
+conda activate PIDM
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+pip install -r requirements.txt
+
+The folder structure of any custom dataset should be as follows:
+
+- dataset/
+- - <dataset_name>/
+- - - img/ 
+- - - pose/
+- - - train_pairs.txt
+- - - test_pairs.txt
+
+You basically will have all your images inside ```img``` folder. You can use different subfolders to store your images or put all your images inside the ```img``` folder as well. The corresponding poses are stored inside ```pose``` folder (as txt file if you use openpose. In our project, we use 18-point keypoint estimation). ```train_pairs.txt``` and ```test_pairs.txt``` will have paths of all possible pairs seperated by comma ```<src_path1>,<tgt_path1>```.
+
+After that, run the following command to process the data:
+
+```
+python data/prepare_data.py \
+--root ./dataset/<dataset_name> \
+--out ./dataset/<dataset_name>
+--sizes ((256,256),)
+```
+
+This will create an lmdb dataset ```./dataset/<dataset_name>/256-256/```
+
+## Inference 
+
+Download the pretrained model from [here](https://drive.google.com/file/d/1WkV5Pn-_fBdiZlvVHHx_S97YESBkx4lD/view?usp=share_link) and place it in the ```checkpoints``` folder.
+For pose control use ```obj.predict_pose``` as in the following code snippets. 
+
+  ```python
+from predict import Predictor
+obj = Predictor()
+
+obj.predict_pose(image=<PATH_OF_SOURCE_IMAGE>, sample_algorithm='ddim', num_poses=4, nsteps=50)
+
+  ```
+
+For apperance control use ```obj.predict_appearance```
+
+  ```python
+from predict import Predictor
+obj = Predictor()
+
+src = <PATH_OF_SOURCE_IMAGE>
+ref_img = <PATH_OF_REF_IMAGE>
+ref_mask = <PATH_OF_REF_MASK>
+ref_pose = <PATH_OF_REF_POSE>
+
+obj.predict_appearance(image=src, ref_img = ref_img, ref_mask = ref_mask, ref_pose = ref_pose, sample_algorithm = 'ddim',  nsteps = 50)
+
+  ```
+
+The output will be saved as ```output.png``` filename.
+
