@@ -1,4 +1,4 @@
-# VLR_Project_Stable_Diffusion
+# VLR Project-Stable Diffusion: Fashion Is All You Need
 This project is aims towards Generating Pose Aware Photo-Realistic Clothes For A Target Image, using an input image of the cloth texture, and a text prompt.
 
 # Abstract:
