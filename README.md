@@ -114,6 +114,6 @@ obj.predict_appearance(image=src, ref_img = ref_img, ref_mask = ref_mask, ref_po
 The output will be saved as ```output.png``` filename.
 
 Collaborators:
-![adeesh_1](https://user-images.githubusercontent.com/116693172/236730717-8ad47bd7-e275-4b5a-bf17-1ec24b82b7a8.jpg)![anvesh_1](https://user-images.githubusercontent.com/116693172/236730723-aea18065-5348-4420-a115-23dc8885dce3.jpg)
-![kriti_1](https://user-images.githubusercontent.com/116693172/236730724-dc8ba235-37dc-41e1-bcee-7b59c56d28fe.jpg) ![meghana_1](https://user-images.githubusercontent.com/116693172/236730725-eab31384-7d32-4958-8dfa-9a0522980209.jpg)
+![collaborators](https://user-images.githubusercontent.com/116693172/236731538-4d774441-365f-48de-8d05-ee46a6a9dd68.jpg)
+
 
