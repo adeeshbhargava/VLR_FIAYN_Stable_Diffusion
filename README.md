@@ -27,7 +27,7 @@ cv2 ,matplotlib, numpy , os, sys , subprocess
 
 
 # Step0: Image Pre-preprocessing 
-Make sure image is 512x512 resoltuion and in .jpg format
+Make sure image is 512x512 resolution and in .jpg format
 
 # Step1: Cloth Segmentation:
 Path: Code/cloth-segmentation
