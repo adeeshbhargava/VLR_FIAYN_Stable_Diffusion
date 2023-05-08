@@ -23,7 +23,7 @@ The fashion industry stands to benefit greatly from the use of AI-generated fash
 # Setup Required:
 
 # Libraries Needed:
-cv2 ,matplotlib, numpy , os 
+cv2 ,matplotlib, numpy , os, sys , subprocess
 
 
 # Step0: Make sure image is 512x512 resoltuion and in .jpg format
