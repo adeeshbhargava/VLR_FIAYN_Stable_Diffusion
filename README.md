@@ -9,7 +9,7 @@ The fashion industry stands to benefit greatly from the use of AI-generated fash
 # Pipeline for Augmentation + Stable Diffusion:
 ![result](https://user-images.githubusercontent.com/116693172/236724536-e049c6b9-0693-4efb-92f0-1057608b0d91.jpg)
 
-# Adding Custom Poses + Target Dress Texture:
+# Adding Custom Poses in Target Dress Texture:
 <img width="1352" alt="Pipeline" src="https://user-images.githubusercontent.com/116693172/236724772-89bcdffe-748a-402a-aa1b-700358a96c5e.png">
 
 # Results For various Target Textures:
@@ -112,4 +112,10 @@ obj.predict_appearance(image=src, ref_img = ref_img, ref_mask = ref_mask, ref_po
   ```
 
 The output will be saved as ```output.png``` filename.
+
+Collaborators:
+![adeesh_1](https://user-images.githubusercontent.com/116693172/236730717-8ad47bd7-e275-4b5a-bf17-1ec24b82b7a8.jpg)
+![anvesh_1](https://user-images.githubusercontent.com/116693172/236730723-aea18065-5348-4420-a115-23dc8885dce3.jpg)
+![kriti_1](https://user-images.githubusercontent.com/116693172/236730724-dc8ba235-37dc-41e1-bcee-7b59c56d28fe.jpg)
+![meghana_1](https://user-images.githubusercontent.com/116693172/236730725-eab31384-7d32-4958-8dfa-9a0522980209.jpg)
 
