@@ -42,11 +42,11 @@ Path: Code/cloth-segmentation
 Path: Code/mask-augmentation.py
 1) Add input images folders path
 2) Add segmentation Mask path
-3) Run `python mask_augmentation.py` and results would be saved in 'results' folder
+3) Run `python mask_augmentation.py` and results would be saved in `results` folder
 
 # Step3 : Run Stable Diffusion 2.1
 Path: Code/Stable-Diffusion-Custom/utils/pipeline.py
-1) check for the 'image_path_dir' and 'mask_path' inside 'Inpaint' function
+1) check for the `image_path_dir` and 'mask_path' inside `Inpaint` function
 2) initialise the right stable diffusion model - (`mad3310/stable-diffusion-fashion-v1-1,stabilityai/stable-diffusion-2-1,CompVis/stable-diffusion-v1-4,CompVis/stable-diffusion-v1-4`) are a few viable options and pretrained models
 3) Results will be saved in `Code/diffusion_results` folder
 
