@@ -1,5 +1,5 @@
 # VLR_Project_Stable_Diffusion
-This project is aimed towards generating new clothes for target image using style and text prompts from the user.
+This project is aims towards Generating Pose Aware Photo-Realistic Clothes For A Target Image, using an input image of the cloth texture, and a text prompt.
 
 # Abstract:
 The fashion industry stands to benefit greatly from the use of AI-generated fashion trends, which can provide personalized fashion recommendations based on an individual's body type, skin tone, and personal preferences, ultimately transforming the way people perceive and approach fashion. Our work focuses on generating pose-aware, photo-realistic clothes for a target image, which takes into account the visual context to ensure accuracy and aesthetic appeal. We use a combination of cloth segmentation, augmentation, and a stable diffusion model that considers the context of the prompt to generate high-quality results. We also utilize PIDM (Person Image Synthesis via Denoising Diffusion Model)\cite{bhunia2023person} to generate images of the person wearing the clothing item in different poses to ensure proper alignment with the body in the target image. Our approach produces realistic-looking clothing items that accurately reflect the texture of the input image while maintaining the integrity of the target image's pose and bodily features.
@@ -22,7 +22,31 @@ The fashion industry stands to benefit greatly from the use of AI-generated fash
 
 # Setup Required:
 
-Libraries Needed:
+# Libraries Needed:
 cv2 ,matplotlib, numpy , os 
 
-# Mask Augmentation Code:
+# Step0: Make sure image is 512x512 resoltuion and in .jpg format
+
+# Step1: Cloth Segmentation:
+Path: Code/cloth-segmentation
+1) Create an input_images folder
+2) Crete an output_images folder
+3) Download pretrained model from this [link](https://drive.google.com/file/d/1mhF3yqd7R-Uje092eypktNl-RoZNuiCJ/view?usp=sharing)(165 MB) in `trained_checkpoint` folder.
+4) Put input images in `input_images` folder
+5) Run `python infer.py` for inference.
+6) Output will be saved in `output_images`
+
+# Step2: Mask Augmentation Code:
+Path: Code/mask-augmentation.py
+1) Add input images folders path
+2) Add segmentation Mask path
+3) Run `python mask_augmentation.py` and results would be saved in 'results' folder
+
+# Step3 : Run Stable Diffusion 2.1
+Path: Code/Stable-Diffusion-Playground/utils/pipeline.py
+1) check for the 'image_path_dir' and 'mask_path' inside 'Inpaint' function
+2) initialise the right stable diffusion model - (`mad3310/stable-diffusion-fashion-v1-1,stabilityai/stable-diffusion-2-1,CompVis/stable-diffusion-v1-4,CompVis/stable-diffusion-v1-4`) are a few viable options and pretrained models
+3) Results will be saved in `Code/diffusion_results` folder
+
+# Step4: Run PIDM on results of Stable Diffusion
+Path: Code/PIDM 
