@@ -120,4 +120,4 @@ The output will be saved as ```output.png``` filename.
 Meghana A Rajeev (https://www.linkedin.com/in/meghana-a-rajeev-26ba61169/) \
 Adeesh Bhargava (https://www.linkedin.com/in/adeesh-bhargava/) \
 Anvesh Reddy Gummi (https://www.linkedin.com/in/anvesh-reddy-gummi-506439139/) \
-Kriti Kukreja (https://www.linkedin.com/in/kritikukreja/) \
+Kriti Kukreja (https://www.linkedin.com/in/kritikukreja/)
