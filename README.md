@@ -117,7 +117,9 @@ The output will be saved as ```output.png``` filename.
 # Collaborators:
 ![collaborators](https://user-images.githubusercontent.com/116693172/236731538-4d774441-365f-48de-8d05-ee46a6a9dd68.jpg)
 
-Meghana A Rajeev (https://www.linkedin.com/in/meghana-a-rajeev-26ba61169/) \
+
+Kriti Kukreja (https://www.linkedin.com/in/kritikukreja/)  \
 Adeesh Bhargava (https://www.linkedin.com/in/adeesh-bhargava/) \
-Anvesh Reddy Gummi (https://www.linkedin.com/in/anvesh-reddy-gummi-506439139/) \
-Kriti Kukreja (https://www.linkedin.com/in/kritikukreja/)
+Meghana A Rajeev (https://www.linkedin.com/in/meghana-a-rajeev-26ba61169/) \
+Anvesh Reddy Gummi (https://www.linkedin.com/in/anvesh-reddy-gummi-506439139/)
+
